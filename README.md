@@ -1,2 +1,2 @@
-# Studying-Python
-Exploring Python features
+# Studying Python
+Exploring Python and its libraries' features

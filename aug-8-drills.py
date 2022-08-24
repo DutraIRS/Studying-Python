@@ -23,6 +23,6 @@ array_5 = npr.default_rng().integers(5, size = 10)
 array_6 = npr.default_rng().integers(5, size = 10)
 index = []
 for i in range(len(array_5)):
-    if array_5 in array_6:
-        index = index.append(array_5[i])
+    if array_5[i] in array_6:
+        index.append(array_5[i])
 print(index)

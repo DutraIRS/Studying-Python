@@ -1,32 +1,43 @@
-# Questão 1
-def altura_media():
-  lista_alturas = []
-  altura = 0
+'''
+===================================================================
+1 - Create a function that will receive heights from inputs (by 
+some kind of loop) and return their average. Must be protected from
+invalid entry values.
+===================================================================
+'''
+def avg_height():
+  list_heights = []
+  height = 0
 
-  while altura != 99:
+  while height != 99:
     try:
-    # tenta converter o input em float
-      altura = float(input('Insira a altura ou insira 99 para finalizar: '))
-      if altura != 99:
-      # insere o valor na lista caso não seja o comando de saída
-       lista_alturas.append(altura)
+    # tries to convert the input to float
+      height = float(input('Type a height or type 99 to exit: '))
+      if height != 99:
+      # unless it is the exit command, appends the given value to the list
+       list_heights.append(height)
     except ValueError:
-      # retorna uma mensagem de erro e reinicia o loop
-      print('Valor inválido! Lembraste de usar ponto para separar as casas decimais?')
+      # returns an error message and restarts the loop
+      print('Invalid value! Have you used a comma as decimal separator?')
       pass
-  soma = 0
-  for i in range(len(lista_alturas)):
-    # soma as alturas da lista e divide pelo número de elementos
-    soma += lista_alturas[i]
+  sum = 0
+  for i in range(len(list_heights)):
+    # sums the given values and divides by the number of values
+    sum += list_heights[i]
   try:
-    media = soma/len(lista_alturas)
+    avg = sum/len(list_heights)
   except ZeroDivisionError:
-    media = 0
-  return media
+    avg = 0
+  return avg
 
-print('A média das alturas é ' + str(round(altura_media(), 2)))
+print('The average height is ' + str(round(avg_height(), 2)))
 
-# Questão 2
+'''
+===================================================================
+2 - Crie uma função que receberá um path para um arquivo .txt, irá
+abrí-o em modo read, e caso o arquivo não exista, irá criá-lo.
+===================================================================
+'''
 import os
 
 def abre_te_sesamo(path):
@@ -52,7 +63,25 @@ path = 'o_barradas_eh_o_melhor.txt'
 abre_te_sesamo(path)
 fecha_te_sesamo(path)
 
-# Questão 3
+'''
+===================================================================
+3 - Crie uma função que receberá duas listas de números e retornará
+uma nova lista que é uma soma das duas listas. 
+Ela deve ser protegida contra entrada de valores inválidos e, caso
+as listas sejam de tamanhos diferentes, deve ser retornado uma men-
+sagem ao usuário.
+Exemplo 1:
+[1, 3, 4, 6]
+[2, 8, 11, 1]
+Output:
+[3, 11, 15, 7]
+Exemplo 2:
+[1, 5]
+[4, 2, 8]
+Output:
+"Tamanhos não compatíveis!"
+===================================================================
+'''
 def soma_listas():
   lista_1 = []
   lista_2 = []
@@ -97,7 +126,18 @@ def soma_listas():
 
 print(soma_listas())
 
-# Questão 4
+'''
+===================================================================
+4 - Crie uma função que receberá uma lista de nomes e irá lançar
+uma exceção caso algum nome seja inválido.
+Um nome é inválido quando:
+- Não for uma string
+- Tiver números
+- Tiver um dos seguintes caracteres: "!@#$%¨&*()_+=-{}[]|:;<>,.?/
+O tipo de exceção lançada deve ser diferente para cada um dos três
+tipos de nomes inválidos. (Use raise Exception())
+===================================================================
+'''
 def confere_nomes(lista_nomes):
   for nome in lista_nomes:
     # confere se são strings
@@ -124,7 +164,15 @@ lista_nomes = ['João', 'Carlota']
 
 print(confere_nomes(lista_nomes))
 
-# Questão 5
+'''
+===================================================================
+5 - Crie uma função fatorial para os números inteiros não negativos
+retorne o fatorial do número (exemplo 4!=24, 1!=1). Para criar essa 
+função não é permitido utilizar bibliotecas, apenas o python 
+padrão. Proteja a função para qualquer tipo de dados que seja
+diferente dos números inteiros não negativos (-5! = exceção).
+===================================================================
+'''
 def fatorial():
   num = 0.5
 

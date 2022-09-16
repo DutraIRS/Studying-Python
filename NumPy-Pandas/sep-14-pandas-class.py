@@ -53,6 +53,6 @@ print('\n', ':) '*42, '\n')
 print(df.fillna(101))
 print('\n', ':) '*42, '\n')
 
-df = pd.read_csv('Polos_Nacionais_de_Agricultura_Irrigada.csv')
+df = pd.read_csv('Polos_Nacionais_de_Agricultura_Irrigada.csv', encoding = 'latin_1')
 print(df.head())
-df.to_csv('PNAI.csv', index = False)
+df.to_csv('PNAI.csv', index = False, encoding = 'latin_1')

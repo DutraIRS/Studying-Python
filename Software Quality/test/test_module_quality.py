@@ -1,9 +1,12 @@
+"""This is the test module of Module Quality"""
 import sys
 
 sys.path.insert(0, './src')
 
 import module_quality as mq
 import unittest
+
+var_1 = 'This is a variable'
 
 def setUpModule():
     print('\nExecuting SetUpModule')

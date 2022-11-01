@@ -35,3 +35,6 @@ class MyTestCase(unittest.TestCase):
         # Assert
         with self.assertRaises(TypeError):
             average_scores(self.list)
+
+if __name__ == '__main__':
+    unittest.main(verbosity=3)

@@ -7,7 +7,7 @@ class Movie:
     
     def __init__(self, movie_title, year, synopsis=''):
         self.title = movie_title # name doesn't have to be the same
-        self.year = year
+        self._year = year # underscore shows that the attribute should be treated as private
         self.synopsis = synopsis
         
     def __str__(self) -> str:
@@ -19,10 +19,10 @@ class Movie:
         return self._year
     
     @year.setter
-    def year(self, year):
+    def year(self, new_year):
         print('Setter!')
-        if year >= 1878:
-            self._year = year
+        if new_year >= 1878:
+            self._year = new_year
         else:
             self._year = -1
             print('Invalid year!')
